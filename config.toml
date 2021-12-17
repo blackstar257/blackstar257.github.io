@@ -1,0 +1,4 @@
+baseURL = 'https://blackstar257.github.io/'
+languageCode = 'en-us'
+theme = "PaperMod"
+title = 'blackstar257.github.io'
