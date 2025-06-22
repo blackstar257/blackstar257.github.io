@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Umstatter - Developer</title>
+    <meta name="description" content="Welcome to my personal page. Explore my projects and connect with me on GitHub.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'fade-in-up': 'fadeInUp 0.8s ease-in-out',
+                        'fade-in-delay': 'fadeIn 1.2s ease-in-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-in-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-in-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
+                            '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.3)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .dark-gradient-bg {
+            background: linear-gradient(-45deg, #1e293b, #334155, #475569, #1e293b);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-dark {
+            backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .text-glow-dark {
+            text-shadow: 0 0 30px rgba(148, 163, 184, 0.3);
+        }
+        .floating-orb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(148, 163, 184, 0.1), rgba(203, 213, 225, 0.05));
+            animation: float-glow 8s ease-in-out infinite;
+        }
+        @keyframes float-glow {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        .card-hover-glow:hover {
+            box-shadow: 0 0 30px rgba(148, 163, 184, 0.2);
+            transform: translateY(-5px) scale(1.02);
+        }
+        .staggered-fade {
+            opacity: 0;
+            animation: staggerFadeIn 0.8s ease-out forwards;
+        }
+        .staggered-fade:nth-child(1) { animation-delay: 0.1s; }
+        .staggered-fade:nth-child(2) { animation-delay: 0.2s; }
+        .staggered-fade:nth-child(3) { animation-delay: 0.3s; }
+        .staggered-fade:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes staggerFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased dark-gradient-bg">
+    
+    <!-- Single Viewport Landing Page -->
+    <main class="h-screen flex items-center justify-center p-6 relative overflow-hidden">
+        
+        <!-- Floating Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-10 floating-orb" style="animation-delay: 0s;"></div>
+            <div class="absolute top-32 right-20 floating-orb" style="animation-delay: 2s; width: 80px; height: 80px;"></div>
+            <div class="absolute bottom-20 left-32 floating-orb" style="animation-delay: 4s; width: 40px; height: 40px;"></div>
+            <div class="absolute bottom-32 right-32 floating-orb" style="animation-delay: 1s; width: 70px; height: 70px;"></div>
+            <div class="absolute top-1/2 left-1/4 floating-orb" style="animation-delay: 3s; width: 30px; height: 30px;"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center z-10">
+            
+            <!-- Left Column - Main Info -->
+            <div class="text-center lg:text-left animate-slide-in-left">
+                
+                <!-- Avatar with Pulse Glow -->
+                <div class="mb-8 flex justify-center lg:justify-start">
+                    <div class="w-32 h-32 rounded-full shadow-2xl animate-pulse-glow overflow-hidden border-4 border-slate-700/50">
+                        <img src="https://avatars.githubusercontent.com/u/4362234?v=4" 
+                             alt="Kyle Umstatter" 
+                             class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+                
+                <!-- Name with Gradient Text -->
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-100 via-slate-300 to-slate-200 bg-clip-text text-transparent text-glow-dark animate-fade-in-up">
+                    Kyle Umstatter
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed animate-fade-in-delay">
+                    Developer passionate about creating elegant solutions and contributing to open source projects.
+                </p>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-delay">
+                    <a href="https://github.com/blackstar257" target="_blank" rel="noopener noreferrer"
+                       class="group flex items-center justify-center space-x-3 bg-slate-700 text-slate-100 px-8 py-4 rounded-lg hover:bg-slate-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-slate-900/50">
+                        <svg class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub Profile</span>
+                    </a>
+                    
+                    <a href="mailto:4362234+blackstar257@users.noreply.github.com"
+                       class="group flex items-center justify-center space-x-3 glass-dark text-slate-200 px-8 py-4 rounded-lg hover:bg-slate-800/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Column - Skills & Projects Grid -->
+            <div class="animate-slide-in-right">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <!-- Skill Card 1 -->
+                    <div class="glass-dark p-6 rounded-xl card-hover-glow transition-all duration-500 staggered-fade group">
+                        <div class="w-12 h-12 bg-slate-600/50 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-slate-200">Development</h3>
+                        <p class="text-slate-400 text-sm">Building modern web applications with clean, efficient code.</p>
+                    </div>
+                    
+                    <!-- Skill Card 2 -->
+                    <div class="glass-dark p-6 rounded-xl card-hover-glow transition-all duration-500 staggered-fade group">
+                        <div class="w-12 h-12 bg-slate-600/50 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-slate-200">Open Source</h3>
+                        <p class="text-slate-400 text-sm">Contributing to the community and sharing knowledge.</p>
+                    </div>
+                    
+                    <!-- Skill Card 3 -->
+                    <div class="glass-dark p-6 rounded-xl card-hover-glow transition-all duration-500 staggered-fade group">
+                        <div class="w-12 h-12 bg-slate-600/50 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-slate-200">Innovation</h3>
+                        <p class="text-slate-400 text-sm">Always learning and exploring new technologies and creative solutions.</p>
+                    </div>
+                    
+                    <!-- Skill Card 4 -->
+                    <div class="glass-dark p-6 rounded-xl card-hover-glow transition-all duration-500 staggered-fade group">
+                        <div class="w-12 h-12 bg-slate-600/50 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-slate-200">Collaboration</h3>
+                        <p class="text-slate-400 text-sm">Working effectively with teams and mentoring fellow developers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer positioned absolutely -->
+        <div class="absolute bottom-6 left-0 right-0 text-center">
+            <p class="text-slate-500 text-sm animate-fade-in-delay">
+                © 2025 Kyle Umstatter. Built with ❤️ using Tailwind CSS.
+            </p>
+        </div>
+    </main>
+
+    <!-- Enhanced Animation Script -->
+    <script>
+        // Add interactive hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax mouse movement effect
+            document.addEventListener('mousemove', function(e) {
+                const cards = document.querySelectorAll('.glass');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                cards.forEach((card, index) => {
+                    const speed = (index + 1) * 0.5;
+                    const xPos = (x - 0.5) * speed;
+                    const yPos = (y - 0.5) * speed;
+                    card.style.transform = `translate(${xPos}px, ${yPos}px) scale(1)`;
+                });
+            });
+
+            // Add click ripple effect
+            const buttons = document.querySelectorAll('a');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    let ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    this.appendChild(ripple);
+                    
+                    let x = e.clientX - e.target.offsetLeft;
+                    let y = e.clientY - e.target.offsetTop;
+                    
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
